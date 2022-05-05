@@ -3,13 +3,13 @@
 #include "GameFramework/Actor.h"
 #include "UObject/Object.h"
 
-DEFINE_LOG_CATEGORY(GpLog);
+DEFINE_LOG_CATEGORY(LogGp);
 
 void FGpLog::Log(const TCHAR* Msg, UObject* Context)
 {
 	FString Header = GetClientServerString(Context);
 
-	UE_LOG(GpLog, Log, TEXT("%s : %s"), *Header, Msg);
+	UE_LOG(LogGp, Log, TEXT("%s : %s"), *Header, Msg);
 }
 
 void FGpLog::Screen(const FString& Msg, UObject* Context, int32 Key, float Time, FColor Color)

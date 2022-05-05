@@ -16,7 +16,7 @@ public class Gp : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] 
 		{
-			
+			"EnhancedInput"
 		});
 
 		// Uncomment if you are using Slate UI
