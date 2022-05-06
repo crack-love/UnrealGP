@@ -9,10 +9,8 @@ class UCameraComponent;
 class UCharacterMovementComponent;
 class USpringArmComponent;
 
-// viewcomponent
-// set look target
-// add input rotate
-// add input move
+// input look
+// input move
 //UCLASS(meta = (BlueprintSpawnableComponent))
 UCLASS(BlueprintType)
 class UGpShoulderViewComponent : public UActorComponent

@@ -2,6 +2,7 @@
 .Archive/
 Content/
 Model/
+OriginalModels/
 
 # Visual Studio 2015 user specific files
 .vs/

@@ -18,23 +18,9 @@
 	ÆÄÄí¸£(climbing)
 */
 
-USTRUCT()
-struct FGpReplicatedAccel
-{
-	GENERATED_BODY()
-
-	// Direction of XY accel component, quantized to represent [0, 2*pi]
-	UPROPERTY()
-	uint8 AccelXYRadians = 0;	
-	
-	//Accel rate of XY component, quantized to represent [0, MaxAcceleration]
-	UPROPERTY()
-	uint8 AccelXYMagnitude = 0;	
-
-	// Raw Z accel rate component, quantized to represent [-MaxAcceleration, MaxAcceleration]
-	UPROPERTY()
-	int8 AccelZ = 0;
-};
+class UInputComponent;
+class USpringArmComponent;
+class UGpShoulderViewComponent;
 
 USTRUCT()
 struct FGpReplicatedAnimation
@@ -56,11 +42,13 @@ class AGpPlayerCharacter : public ACharacter
 public:
 	AGpPlayerCharacter(const FObjectInitializer& Init = FObjectInitializer::Get());
 
-	void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void PostInitializeComponents() override;
+
+	void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+	
+	void PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker) override;
 
 	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-
-	void PostInitializeComponents() override;
 
 	//
 	// RPCs
@@ -77,23 +65,17 @@ private:
 
 private:
 	UFUNCTION()
-	void OnRep_ReplicatedAccel();
-
-	UFUNCTION()
 	void OnRep_ReplicatedAnimation();
 
 private:
-	UPROPERTY(ReplicatedUsing = OnRep_ReplicatedAccel)
-	FGpReplicatedAccel ReplicatedAccel;
-
 	UPROPERTY(ReplicatedUsing = OnRep_ReplicatedAnimation)
-	FGpReplicatedAccel ReplicatedAnimation;
+	FGpReplicatedAnimation ReplicatedAnimation;
 
 	UPROPERTY(EditAnywhere)
-	class USpringArmComponent* SpringArm;
+	USpringArmComponent* SpringArm;
 
 	UPROPERTY(EditAnywhere)
-	class UGpShoulderViewComponent* ShoulderView;
+	UGpShoulderViewComponent* ShoulderView;
 };
 
 
