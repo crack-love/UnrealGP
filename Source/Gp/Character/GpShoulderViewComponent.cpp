@@ -7,7 +7,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "GpInputNameManager.h"
+#include "Gp/GpInputNameManager.h"
 
 UGpShoulderViewComponent::UGpShoulderViewComponent(const FObjectInitializer& Init)
 {
