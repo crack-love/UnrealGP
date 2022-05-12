@@ -3,7 +3,7 @@
 #include "Logging/LogMacros.h"
 #include "Containers/UnrealString.h"
 
-DECLARE_LOG_CATEGORY_EXTERN(LogGp, Log, All);
+DECLARE_LOG_CATEGORY_EXTERN(GpLog, Log, All);
 
 // Literal Format with args to FString
 #define TEXTFSTR(FmtLit,...) FString::Printf(TEXT(FmtLit),##__VA_ARGS__)
