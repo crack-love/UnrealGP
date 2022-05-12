@@ -1,0 +1,1167 @@
+[general]
+shift + shift : search dialog, tab key to move tab
+alt + enter : open action menu
+ctrl + sft + t : go to file (search dialog)
+
+[refactor]
+ctrl + r + r : rename
+
+.new
+.var
+.MakeShare
+
+
+
+JetBrains Rider's top keyboard shortcuts
+
+Search Everywhere
+Double Shift
+
+Find Action...
+
+Ctrl+Shift+A
+
+Open Solution or Project...
+
+Ctrl+Shift+O
+
+Open File or Folder...
+
+Ctrl+O
+
+Show Solution window
+
+Ctrl+Alt+L
+
+NuGet Quick List
+
+Alt+Shift+N
+
+Build Solution
+
+Ctrl+Shift+B
+
+Show Intention Actions
+
+Alt+Enter
+
+Navigate To...
+
+Alt+`
+
+Recent Files
+
+Ctrl+Comma
+
+Find Usages
+
+Shift+F12
+
+Select In...
+
+Alt+F1
+
+Settings...
+
+Ctrl+Alt+S
+
+Generate...
+
+Alt+Insert
+
+Debug...
+
+Alt+Shift+F9
+
+View Breakpoints...
+
+Ctrl+Alt+B
+
+Attach to Process...
+
+Ctrl+Alt+P
+
+VCS Operations Popup...
+
+Ctrl+Alt+Q
+
+Refactor This...
+
+Ctrl+Shift+R
+
+Inspect This...
+
+Ctrl+Alt+Shift+A
+
+Reformat Code
+
+Ctrl+Alt+Enter
+
+Code Cleanup...
+
+Ctrl+E, C
+
+Manage projects and solutions﻿
+Open Solution or Project...
+
+Ctrl+Shift+O
+
+Open File or Folder...
+
+Ctrl+O
+
+NuGet Quick List
+
+Alt+Shift+N
+
+Show NuGet window
+
+Alt+7
+
+Build Solution
+
+Ctrl+Shift+B
+
+Build Current Project
+
+Ctrl+Shift+F7
+
+Cancel Build
+
+Ctrl+F9
+
+Basic editing﻿
+Cut
+
+Ctrl+X
+
+Copy
+
+Ctrl+C
+
+Paste
+
+Ctrl+V
+
+Paste as Plain Text
+
+Ctrl+Alt+Shift+V
+
+Paste from History...
+
+Ctrl+Shift+V
+
+Copy Paths
+
+Ctrl+Shift+C
+
+Copy Reference
+
+Ctrl+Alt+Shift+C
+
+Save All
+
+Ctrl+Shift+S
+
+Undo
+
+Ctrl+Z
+
+Redo
+
+Ctrl+Y
+
+Indent Selection
+
+Tab
+
+Unindent Line or Selection
+
+Shift+Tab
+
+Auto-Indent Lines
+
+Ctrl+Alt+I
+
+Start New Line
+
+Shift+Enter
+
+Start New Line Before Current
+
+Ctrl+Enter
+
+Delete Line
+
+Ctrl+L
+
+Join Lines
+
+Ctrl+Shift+J
+
+Duplicate Line or Selection
+
+Ctrl+D
+
+Toggle Case
+
+Ctrl+Shift+U
+
+Scratch File
+
+Ctrl+Alt+Shift+Insert
+
+Open Source in New Window
+
+Shift+F4
+
+Show Whitespaces
+
+Ctrl+R, W
+
+Soft-Wrap
+
+Ctrl+E, W
+
+Caret navigation﻿
+Move Caret to Previous Word
+
+Ctrl+Left
+
+Move Caret to Next Word
+
+Ctrl+Right
+
+Move Caret to Line Start
+
+Home
+
+Move Caret to Line End
+
+End
+
+Containing Declaration
+
+Ctrl+[
+
+Move Caret to Matching Brace
+
+Ctrl+]
+
+Move Caret to Code Block Start
+
+Alt+Shift+[
+
+Move Caret to Code Block End
+
+N/A
+
+Next Method
+
+Alt+Down
+
+Previous Method
+
+Alt+Up
+
+Move Caret to Page Top
+
+Ctrl+Page Up
+
+Move Caret to Page Bottom
+
+Ctrl+Page Down
+
+Page Up
+
+Page Up
+
+Page Down
+
+Page Down
+
+Move Caret to Text Start
+
+Ctrl+Home
+
+Move Caret to Text End
+
+Ctrl+End
+
+Select text﻿
+Select All
+
+Ctrl+A
+
+Left with Selection
+
+Shift+Left
+
+Right with Selection
+
+Shift+Right
+
+Move Caret to Previous Word with Selection
+
+Ctrl+Shift+Left
+
+Move Caret to Next Word with Selection
+
+Ctrl+Shift+Right
+
+Move Caret to Line Start with Selection
+
+Shift+Home
+
+Move Caret to Line End with Selection
+
+Shift+End
+
+Up with Selection
+
+Shift+Up
+
+Down with Selection
+
+Shift+Down
+
+Select Containing Declaration
+
+Ctrl+Shift+[
+
+Move Caret to Code Block Start with Selection
+
+Ctrl+Alt+Shift+[
+
+Move Caret to Code Block End with Selection
+
+Ctrl+Alt+Shift+]
+
+Move Caret to Page Top with Selection
+
+Ctrl+Shift+Page Up
+
+Move Caret to Page Bottom with Selection
+
+Ctrl+Shift+Page Down
+
+Page Up with Selection
+
+Shift+Page Up
+
+Page Down with Selection
+
+Shift+Page Down
+
+Move Caret to Text Start with Selection
+
+Ctrl+Shift+Home
+
+Move Caret to Text End with Selection
+
+Ctrl+Shift+End
+
+Extend Selection
+
+Alt+Shift+=
+
+Shrink Selection
+
+Alt+Shift+Minus
+
+Code folding﻿
+Expand
+
+Ctrl+M, E
+
+Collapse
+
+Ctrl+M, S
+
+Expand Recursively
+
+Ctrl+Alt+NumPad +
+
+Collapse Recursively
+
+Ctrl+Alt+NumPad -
+
+Expand All
+
+Ctrl+M, X
+
+Collapse All
+
+Ctrl+M, A
+
+Fold Selection
+
+Ctrl+M, H
+
+Multiple carets and selection ranges﻿
+Add/Remove Caret
+
+Ctrl+Alt+Click
+
+Toggle Column Selection Mode
+
+Alt+Shift+Insert
+
+Clone Caret Above
+
+Double Ctrl + Up
+
+Clone Caret Below
+
+Double Ctrl + Down
+
+Clone Caret Above with Virtual Space
+
+Alt+Shift+Up
+
+Clone Caret Below with Virtual Space
+
+Alt+Shift+Down
+
+Add Caret to Each Line in Selection
+
+Alt+Shift+G
+
+Add Selection for Next Occurrence
+
+Alt+Shift+.
+
+Select All Occurrences
+
+Alt+Shift+;
+
+Deselect Last Occurrence
+
+Alt+Shift+Comma
+
+Create Rectangular Selection
+
+Alt+Shift+Click
+
+Drag to Create Rectangular Selection
+
+Alt+Click
+
+Drag to Create Multiple Rectangular Selections
+
+Ctrl+Alt+Shift+Click
+
+Coding assistance﻿
+Show Intention Actions
+
+Alt+Enter
+
+Basic Completion
+
+Ctrl+Space
+
+Type-Matching Completion
+
+Ctrl+Alt+Space
+
+Second Basic Completion
+
+Alt+Shift+Space
+
+Complete Current Statement
+
+Ctrl+Shift+Enter
+
+Reformat Code
+
+Ctrl+Alt+Enter
+
+Parameter Info
+
+Ctrl+Shift+Space
+
+Quick Documentation
+
+Ctrl+K, I
+
+Move Statement Up
+
+Ctrl+Alt+Shift+Up
+
+Move Statement Down
+
+Ctrl+Alt+Shift+Down
+
+Move Element Left
+
+Ctrl+Alt+Shift+Left
+
+Move Statement Right
+
+Ctrl+Alt+Shift+Right
+
+Move Line Up
+
+N/A
+
+Move Line Down
+
+N/A
+
+Comment with Line Comment
+
+Ctrl+Alt+/
+
+Comment with Block Comment
+
+Ctrl+Shift+/
+
+Generate...
+
+Alt+Insert
+
+Code Cleanup...
+
+Ctrl+E, C
+
+Silent Code Cleanup
+
+Ctrl+E, F
+
+Context navigation﻿
+Next Method
+
+Alt+Down
+
+Previous Method
+
+Alt+Up
+
+Go to Line/Column...
+
+Ctrl+G
+
+Switcher
+
+Ctrl+Tab
+
+Select In...
+
+Alt+F1
+
+Locate/Select in Solution View
+
+Alt+Shift+L
+
+Recent Files
+
+Ctrl+Comma
+
+Recently Changed Files
+
+Ctrl+Shift+Comma
+
+Last Edit Location
+
+Ctrl+Shift+Backspace
+
+Back
+
+Ctrl+Minus
+
+Forward
+
+Ctrl+Shift+Minus
+
+Select Next Tab
+
+Alt+Right
+
+Select Previous Tab
+
+Alt+Left
+
+Toggle Anonymous Bookmark
+
+Ctrl+K, K
+
+Toggle Bookmark with Digit
+
+Ctrl+Shift+[digit]
+
+Toggle Bookmark with Mnemonic
+
+Ctrl+F11
+
+Show All Bookmarks
+
+Ctrl+`
+
+Go to Bookmark with Digit
+
+Ctrl+[digit]
+
+Show Mnemonic Bookmarks
+
+N/A
+
+Go to Next Bookmark
+
+Ctrl+K, N
+
+Go to Previous Bookmark
+
+Ctrl+K, P
+
+Show Bookmarks window
+
+Alt+2
+
+Show Structure window
+
+Ctrl+Alt+F
+
+Show Find window
+
+Alt+3
+
+Next Occurrence
+
+Ctrl+Alt+Down
+
+Previous Occurrence
+
+Ctrl+Alt+Up
+
+Find everything﻿
+Search Everywhere
+
+Double Shift
+
+Find...
+
+Ctrl+F
+
+Find Next / Move to Next Occurrence
+
+F3
+
+Find Previous / Move to Previous Occurrence
+
+Shift+F3
+
+Replace...
+
+Ctrl+H
+
+Find in Files...
+
+Ctrl+Shift+F
+
+Replace in Files...
+
+Ctrl+Shift+H
+
+Next Occurrence of the Word at Caret
+
+Ctrl+F3
+
+Go to File...
+
+Ctrl+Shift+T
+
+File Member
+
+Alt+\
+
+Go to Symbol...
+
+Ctrl+Alt+Shift+T
+
+Find Action...
+
+Ctrl+Shift+A
+
+Navigate from symbols﻿
+Navigate To...
+
+Alt+`
+
+Find Usages
+
+Shift+F12
+
+Go to Declaration or Usages
+
+F12
+
+Go to Type Declaration
+
+Ctrl+Shift+F11
+
+Show Usages
+
+Alt+Shift+F12
+
+Go to Super Method
+
+Alt+Home
+
+Go to Implementation(s)
+
+Ctrl+F12
+
+Go to Derived Symbols
+
+Alt+End
+
+Highlight Usages in File
+
+Alt+Shift+F11
+
+Code analysis﻿
+Show Intention Actions
+
+Alt+Enter
+
+Error Description
+
+Alt+T
+
+Next Code Issue
+
+Alt+Page Down
+
+Previous Code Issue
+
+Alt+Page Up
+
+Next Error
+
+Alt+Shift+Page Down
+
+Previous Error
+
+Alt+Shift+Page Up
+
+Toggle Code Inspection
+
+Ctrl+Alt+Shift+8
+
+Run Inspection by Name...
+
+Ctrl+Alt+Shift+I
+
+Inspect This...
+
+Ctrl+Alt+Shift+A
+
+Show Problems window
+
+Alt+6
+
+Run and debug﻿
+Run context configuration
+
+Ctrl+F5
+
+Run...
+
+Ctrl+Alt+Shift+R
+
+Debug context configuration
+
+Alt+F5
+
+Debug...
+
+Alt+Shift+F9
+
+Attach to Process...
+
+Ctrl+Alt+P
+
+Stop
+
+Shift+F5
+
+Pause
+
+Ctrl+Alt+Break
+
+Resume Program
+
+F5
+
+Apply Hot Reload Changes
+
+Alt+F10
+
+Stop Background Processes...
+
+Ctrl+Shift+F2
+
+Step Over
+
+F10
+
+Force Step Over
+
+Alt+Shift+F8
+
+Step Into
+
+F11
+
+Smart Step Into
+
+Shift+F7
+
+Force Step Into
+
+Alt+F11
+
+Step Out
+
+Shift+F11
+
+Run To Cursor
+
+Ctrl+F10
+
+Force Run To Cursor
+
+Ctrl+Alt+F9
+
+Skip to Cursor
+
+Ctrl+Shift+F10
+
+Show Execution Point
+
+Alt+NumPad *
+
+Evaluate Expression...
+
+Shift+F9
+
+Quick Evaluate Expression
+
+Ctrl+Alt+F8
+
+Toggle Line Breakpoint
+
+F9
+
+Toggle Temporary Line Breakpoint
+
+Ctrl+Alt+Shift+F8
+
+Toggle Breakpoint Enabled
+
+Ctrl+F9
+
+View Breakpoints...
+
+Ctrl+Alt+B
+
+Edit Breakpoint
+
+Alt+F9
+
+Show Run window
+
+Alt+4
+
+Show Debug window
+
+Alt+5
+
+Show Services window
+
+N/A
+
+Analyze Stack Trace or Thread Dump...
+
+Ctrl+E, T
+
+Refactorings﻿
+Refactor This...
+
+Ctrl+Shift+R
+
+Rename...
+
+Ctrl+R, R
+
+Change Signature...
+
+Ctrl+R, S
+
+Inline...
+
+Ctrl+R, I
+
+Move...
+
+Ctrl+R, O
+
+Extract Method...
+
+Ctrl+R, M
+
+Introduce Field...
+
+Ctrl+R, F
+
+Introduce Parameter...
+
+Ctrl+R, P
+
+Introduce Variable...
+
+Ctrl+R, V
+
+Safe Delete...
+
+Ctrl+R, D
+
+Global VCS actions﻿
+VCS Operations Popup...
+
+Ctrl+Alt+Q
+
+Commit...
+
+Ctrl+Alt+K
+
+Update Project
+
+Ctrl+Alt+W
+
+Rollback
+
+Ctrl+Alt+Z
+
+Push...
+
+Ctrl+Shift+K
+
+Next Change
+
+Ctrl+Alt+Shift+N
+
+Previous Change
+
+Ctrl+Alt+Shift+P
+
+Show Version Control window
+
+Alt+9
+
+Show Commit window
+
+N/A
+
+Differences viewer﻿
+Show Diff
+
+Ctrl+D
+
+Compare Files
+
+Ctrl+D
+
+Next Difference
+
+F7
+
+Previous Difference
+
+Shift+F7
+
+Accept Left Side
+
+Ctrl+Alt+R
+
+Accept Right Side
+
+Ctrl+Alt+A
+
+Select Opposite Diff Pane
+
+Ctrl+Shift+Tab
+
+Show Diff Settings Popup...
+
+Ctrl+Shift+D
+
+Unit testing﻿
+Unit Testing Quick List...
+
+Alt+Shift+U
+
+Run Unit Tests
+
+Ctrl+U, R
+
+Debug Unit Tests
+
+Ctrl+U, D
+
+Stop Execution
+
+Ctrl+U, S
+
+Repeat Previous Run
+
+Ctrl+U, U
+
+Rerun Failed Tests
+
+Ctrl+U, F
+
+Run Tests Until Failure
+
+Ctrl+U, W
+
+Run All Tests from Solution
+
+Ctrl+U, L
+
+Create New Session
+
+Ctrl+U, N
+
+Append Tests to Session
+
+Ctrl+U, A
+
+Run Current Session
+
+Ctrl+U, Y
+
+Run Unit Tests under dotMemory Unit
+
+Ctrl+U, M
+
+Run Selected Tests
+
+Shift+Enter
+
+Debug Selected Tests
+
+Ctrl+D
+
+Run Current Session (Tool Window)
+
+Ctrl+Y
+
+Create New Session (Tool Window)
+
+Alt+Shift+Insert
+
+Append Tests to Session (Tool Window)
+
+Ctrl+Alt+Insert
+
+Remove Selected Tests (Tool Window)
+
+Delete
+
+Run All Tests from Solution (Tool Window)
+
+Ctrl+L
+
+Show Unit Tests window
+
+Alt+8
+
+Tool windows﻿
+Hide Active Tool Window
+
+Shift+Escape
+
+Hide All Tool Windows
+
+Ctrl+Shift+F12
+
+Jump to Last Tool Window
+
+Ctrl+Alt+Backspace
+
+Stretch to Left
+
+Ctrl+Alt+Shift+Left
+
+Stretch to Right
+
+Ctrl+Alt+Shift+Right
+
+Stretch to Top
+
+Ctrl+Alt+Shift+Up
+
+Stretch to Bottom
+
+Ctrl+Alt+Shift+Down
+
+Show Solution window
+
+Ctrl+Alt+L
+
+Show Bookmarks window
+
+Alt+2
+
+Show Find window
+
+Alt+3
+
+Show Run window
+
+Alt+4
+
+Show Debug window
+
+Alt+5
+
+Show Problems window
+
+Alt+6
+
+Show Structure window
+
+Ctrl+Alt+F
+
+Show Services window
+
+N/A
+
+Show Version Control window
+
+Alt+9
+
+Show Commit window
+
+N/A
+
+Show Build window
+
+Alt+0
+
+Show NuGet window
+
+Alt+7
+
+Show Unit Tests window
+
+Alt+8
+
+Show Terminal window
+
+Ctrl+Alt+1
+
+Show Database window
+
+Ctrl+Alt+3

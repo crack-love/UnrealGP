@@ -1,6 +1,7 @@
 #include "GpGameMode.h"
 
-AGpGameMode::AGpGameMode() : Super()
-{
+#include "CoreMinimal.h"
 
-}
+#include "GameFramework/GameSession.h"
+#include "GameFramework/GameStateBase.h"
+

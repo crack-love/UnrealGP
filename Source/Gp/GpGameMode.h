@@ -10,6 +10,4 @@ class AGpGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
-protected:
-	AGpGameMode();
 };

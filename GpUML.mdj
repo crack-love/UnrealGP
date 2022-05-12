@@ -251,7 +251,7 @@
 											"font": "Arial;13;0",
 											"left": -144,
 											"top": -720,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -413,7 +413,7 @@
 											"font": "Arial;13;1",
 											"left": 157,
 											"top": 303,
-											"width": 51.76513671875,
+											"width": 51.91748046875,
 											"height": 13,
 											"text": "AITarget"
 										},
@@ -427,7 +427,7 @@
 											"font": "Arial;13;0",
 											"left": -222,
 											"top": -411,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -448,7 +448,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 296,
-									"width": 61.76513671875,
+									"width": 61.91748046875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGASypEFG8gvqI="
@@ -475,7 +475,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 321,
-									"width": 61.76513671875,
+									"width": 61.91748046875,
 									"height": 10
 								},
 								{
@@ -490,7 +490,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 331,
-									"width": 61.76513671875,
+									"width": 61.91748046875,
 									"height": 10
 								},
 								{
@@ -530,7 +530,7 @@
 							"containerChangeable": true,
 							"left": 152,
 							"top": 296,
-							"width": 61.76513671875,
+							"width": 61.91748046875,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAGASypEFG8fvP4="
@@ -603,7 +603,7 @@
 											"font": "Arial;13;0",
 											"left": -254,
 											"top": 549,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -765,7 +765,7 @@
 											"font": "Arial;13;1",
 											"left": 165,
 											"top": 447,
-											"width": 50.31787109375,
+											"width": 51.0732421875,
 											"height": 13,
 											"text": "Weapon"
 										},
@@ -779,7 +779,7 @@
 											"font": "Arial;13;0",
 											"left": -227,
 											"top": 125,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -800,7 +800,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 440,
-									"width": 60.31787109375,
+									"width": 61.0732421875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGASysOHnBzQ5A="
@@ -827,7 +827,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 465,
-									"width": 60.31787109375,
+									"width": 61.0732421875,
 									"height": 10
 								},
 								{
@@ -842,7 +842,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 475,
-									"width": 60.31787109375,
+									"width": 61.0732421875,
 									"height": 10
 								},
 								{
@@ -882,7 +882,7 @@
 							"containerChangeable": true,
 							"left": 160,
 							"top": 440,
-							"width": 60.31787109375,
+							"width": 61.0732421875,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAGASysOHnBydWU="
@@ -955,7 +955,7 @@
 											"font": "Arial;13;0",
 											"left": -179,
 											"top": 125,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -1131,7 +1131,7 @@
 											"font": "Arial;13;0",
 											"left": -48,
 											"top": -560,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -1307,7 +1307,7 @@
 											"font": "Arial;13;0",
 											"left": 192,
 											"top": -560,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -1483,7 +1483,7 @@
 											"font": "Arial;13;0",
 											"left": -208,
 											"top": -240,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -1644,7 +1644,7 @@
 											"font": "Arial;13;1",
 											"left": 165,
 											"top": 511,
-											"width": 82.34814453125,
+											"width": 82.4560546875,
 											"height": 13,
 											"text": "MeshedActor"
 										},
@@ -1657,7 +1657,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"top": -352,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -1677,7 +1677,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 504,
-									"width": 92.34814453125,
+									"width": 92.4560546875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGASzD1JHPtie0="
@@ -1704,7 +1704,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 529,
-									"width": 92.34814453125,
+									"width": 92.4560546875,
 									"height": 10
 								},
 								{
@@ -1719,7 +1719,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 539,
-									"width": 92.34814453125,
+									"width": 92.4560546875,
 									"height": 10
 								},
 								{
@@ -1757,7 +1757,7 @@
 							"containerChangeable": true,
 							"left": 160,
 							"top": 504,
-							"width": 92.34814453125,
+							"width": 92.4560546875,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAGASzD1JHPsnS0="
@@ -1830,7 +1830,7 @@
 											"font": "Arial;13;0",
 											"left": 48,
 											"top": -496,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -2066,7 +2066,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 237,
+									"left": 238,
 									"top": 441,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2087,7 +2087,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 237,
+									"left": 238,
 									"top": 426,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2108,7 +2108,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 237,
+									"left": 238,
 									"top": 471,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -2129,7 +2129,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 245,
+									"left": 246,
 									"top": 441,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -2150,7 +2150,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 248,
+									"left": 249,
 									"top": 427,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -2171,7 +2171,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 241,
+									"left": 242,
 									"top": 468,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -2282,7 +2282,7 @@
 								"$ref": "AAAAAAGASysOHnBxh6k="
 							},
 							"lineStyle": 1,
-							"points": "220:462;255:462",
+							"points": "221:462;255:462",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGAS0AL8XYWKX0="
@@ -2401,7 +2401,7 @@
 								"$ref": "AAAAAAGASysOHnBxh6k="
 							},
 							"lineStyle": 1,
-							"points": "167:439;87:357",
+							"points": "168:439;87:357",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGAS0DhVYSpoJI="
@@ -2468,7 +2468,7 @@
 											"font": "Arial;13;0",
 											"left": 32,
 											"top": -80,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -2644,7 +2644,7 @@
 											"font": "Arial;13;0",
 											"left": -96,
 											"top": 256,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -4458,7 +4458,7 @@
 											"font": "Arial;13;0",
 											"left": -464,
 											"top": 96,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -4619,7 +4619,7 @@
 											"font": "Arial;13;1",
 											"left": 157,
 											"top": 63,
-											"width": 70.07177734375,
+											"width": 71.474609375,
 											"height": 13,
 											"text": "GameMode"
 										},
@@ -4632,7 +4632,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -112,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -4652,7 +4652,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 56,
-									"width": 80.07177734375,
+									"width": 81.474609375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGAS0yMw7N23Y0="
@@ -4679,7 +4679,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 81,
-									"width": 80.07177734375,
+									"width": 81.474609375,
 									"height": 10
 								},
 								{
@@ -4694,7 +4694,7 @@
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 91,
-									"width": 80.07177734375,
+									"width": 81.474609375,
 									"height": 10
 								},
 								{
@@ -4732,7 +4732,7 @@
 							"containerChangeable": true,
 							"left": 152,
 							"top": 56,
-							"width": 80.07177734375,
+							"width": 81.474609375,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAGAS0yMw7N1N98="
@@ -4805,7 +4805,7 @@
 											"font": "Arial;13;0",
 											"left": -112,
 											"top": -32,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -4981,7 +4981,7 @@
 											"font": "Arial;13;0",
 											"left": 368,
 											"top": 80,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -5157,7 +5157,7 @@
 											"font": "Arial;13;0",
 											"left": -752,
 											"top": -336,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -5288,8 +5288,8 @@
 							"left": 728,
 							"top": 56,
 							"width": 689,
-							"height": 370,
-							"text": "x GameInstance (an object spawned when you launch the application and that remains the same until you close it)\nx GameMode (spawned when a level is loaded)\nx GameState (spawned by the gameMode)\nx PlayerState (spawned when a PlayerController is spawned = when a player arrives in the game)\n------------------\nx GameInstance - Holds any non-pointer persistent variables\n   (persistent means that you need to store in between two levels and that you don’t need to store in a SaveGame)\nx GameMode - The overall game manager - starts and stops the current game space you’re in, \n   handles the GameStates and how they rotate - an example might be “King of the Hill”\nx GameState - Keeps track of every data relative to the current state of the game (timers, scores, winning team)\n   that all players in the game need to know about, handles scripted events related to the state\nx For instance:\n   y PregameState: Prevents player from performing any action, starts a timer and display it to everyone. \n      When timer expires, ask KotH (KingOfTheHill game mode) to rotate to IngameState\n   y IngameState: Enable player input, spawn a big loud noise and open players’ spawn gates. \n      Open the Capture Point and store the amount of capture time both teams have. \n      When one of the team reaches max score, asks KotH to switch to EndgameState.\n   y EndgameState: Destroy every player’s characters and starts a cinematic showing the PlayOfTheGame \n      then asks KotH to rotate to ScoreGameState etc.\n   y PlayerController - HUD, Camera, Mouse, Keyboard, Gamepad, Inputs calling actions on the Character.\n   y PlayerCharacter - Actions in response of Controller’s input + Holds personal infos and stats \n      (Health, Ammo - but Ammo might on your Weapon Class if you can switch Weapons).\n   y PlayerState - Holds every variable non related to the PlayerCharacter that needs to be known by everyone \n      (best scores, current killing streak, player name…)."
+							"height": 396,
+							"text": "x GameInstance (an object spawned when you launch the application and that remains the same until you close it)\nx GameMode (spawned when a level is loaded) (server)\nx GameState (spawned by the gameMode) (server, for replicate each client)\nx PlayerState (spawned when a PlayerController is spawned = when a player arrives in the game)\n------------------\nx GameInstance - Holds any non-pointer persistent variables\n   (persistent means that you need to store in between two levels and that you don’t need to store in a SaveGame)\nx GameMode - The overall game manager - starts and stops the current game space you’re in, \n   handles the GameStates and how they rotate - an example might be “King of the Hill”\nx GameState - Keeps track of every data relative to the current state of the game (timers, scores, winning team)\n   that all players in the game need to know about, handles scripted events related to the state\nx For instance:\n   y PregameState: Prevents player from performing any action, starts a timer and display it to everyone. \n      When timer expires, ask KotH (KingOfTheHill game mode) to rotate to IngameState\n   y IngameState: Enable player input, spawn a big loud noise and open players’ spawn gates. \n      Open the Capture Point and store the amount of capture time both teams have. \n      When one of the team reaches max score, asks KotH to switch to EndgameState.\n   y EndgameState: Destroy every player’s characters and starts a cinematic showing the PlayOfTheGame \n      then asks KotH to rotate to ScoreGameState etc.\nx PlayerController - HUD, Camera, Mouse, Keyboard, Gamepad, Inputs calling actions on the Character.\nx PlayerCharacter - Actions in response of Controller’s input + Holds personal infos and stats \n   (Health, Ammo - but Ammo might on your Weapon Class if you can switch Weapons).\nx PlayerState - Holds every variable non related to the PlayerCharacter that needs to be known by everyone \n   (best scores, current killing streak, player name…)."
 						},
 						{
 							"_type": "UMLClassView",
@@ -5346,7 +5346,7 @@
 											"font": "Arial;13;0",
 											"left": 32,
 											"top": -480,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -5522,7 +5522,7 @@
 											"font": "Arial;13;0",
 											"left": 256,
 											"top": -112,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -5696,7 +5696,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"top": -576,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -6057,7 +6057,7 @@
 											"font": "Arial;13;0",
 											"left": -192,
 											"top": 144,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
