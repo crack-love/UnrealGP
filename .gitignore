@@ -3,6 +3,8 @@
 Content/
 Model/
 OriginalModels/
+## Rider Generated
+.idea/*
 Plugins/Developer/RiderLink
 
 # Visual Studio 2015 user specific files
