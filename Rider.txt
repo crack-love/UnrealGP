@@ -1,18 +1,32 @@
-[general]
-shift + shift : search dialog, tab key to move tab
-alt + enter : open action menu
-ctrl + sft + t : go to file (search dialog)
+[My Custom Keymap]
 
-[refactor]
-ctrl + r + r : rename
+Close Tab : Ctrl + W
 
+Show Context Actions : Alt + Q
+
+Go To Declaration : Alt + G
+
+Generate Code : Alt + Shift + G
+
+Show Usages : Alt + F
+
+Find Usages : Alt + Shift + F
+
+Rename : Alt + R
+
+Split And Move Right Tab : Alt + Shift + S
+
+Move Opposite Group Tab : Alt + S
+
+Go To File : Alt + shift + O
+
+[snippet]
 .new
 .var
 .MakeShare
 
 
-
-JetBrains Rider's top keyboard shortcuts
+[JetBrains Rider's top keyboard shortcuts]
 
 Search Everywhere
 Double Shift

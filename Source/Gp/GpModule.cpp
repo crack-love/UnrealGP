@@ -6,12 +6,12 @@ class FGpModule : public FDefaultGameModuleImpl
 {
 	void StartupModule() override
 	{
-		FGpLog::Log(TEXT("FGPModule::StartupModule"));
+		//FGpLog::Log(TEXT("FGPModule::StartupModule"));
 	}
 
 	void ShutdownModule() override
 	{
-		FGpLog::Log(TEXT("FGPModule::ShutdownModule"));
+		//FGpLog::Log(TEXT("FGPModule::ShutdownModule"));
 	}
 };
 
