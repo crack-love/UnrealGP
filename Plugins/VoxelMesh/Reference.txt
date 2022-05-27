@@ -1,0 +1,5 @@
+Mesh Generation and Editing at Runtime in UE4.26
+gradientspace.com, Ryan Schmidt, an employee of Epic Games, October 23, 2020
+
+Polygonising a scalar field Also known as : "3D Contouring", "Marching Cubes", "Surface Reconstruction"
+Written by Paul Bourke, May 1994
