@@ -1,46 +1,38 @@
 #pragma once
 
-#include "UObject/ObjectMacros.h"
+#include "GameFramework/Actor.h"
+#include "VoxelData.generated.h"
 
-extern struct FIntVector;
-
-USTRUCT()
-class FVoxelData
+UCLASS()
+class AVoxelData : public AActor
 {
 	GENERATED_BODY()
-
-	// Static Method
+	
+	// VoxelData Modification
 public:
-	static int32 GetSerialIndex(FIntVector Idx, FIntVector Size);
+	void SetSize(FIntVector NewSize);
 
-	// Public Method
-public:
-	void SetSize(FIntVector Size);
-
-	void SetGap(FVector Gap);
+	void SetGap(FVector NewGap);
 
 	void SetVolume(FIntVector Idx, float Volume);
 
-	float GetVolume(FIntVector Idx);
-
-	TArray<float> GetVolumeArray();
-
-	FIntVector GetSize();
-
-	FVector GetGap();
-
-	// Clear vertices but reamin meta(size,gap)
+	// Clear vertices but remain meta(size,gap)
 	void Clear();
+	
+	float GetVolume(FIntVector Idx) const;
 
+	TArray<float> GetVolumeArray() const;
+
+	FIntVector GetSize() const;
+
+	FVector GetGap() const;
+	
 private:
-	UPROPERTY(VisibleAnywhere, Replicated)
+	int SerialIndex(const FIntVector Idx) const;
+	
 	TArray<float> Volumes;
 
-	UPROPERTY(VisibleAnywhere, Replicated)
 	FIntVector Size;
 
-	UPROPERTY(VisibleAnywhere, Replicated)
 	FVector Gap;
-
-	int32 GetSerialIndex_Internal(FIntVector Idx);
 };

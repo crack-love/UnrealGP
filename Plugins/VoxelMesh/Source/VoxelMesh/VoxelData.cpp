@@ -1,6 +1,6 @@
 #include "VoxelData.h"
 
-void FVoxelData::SetSize(FIntVector NewSize)
+void AVoxelData::SetSize(const FIntVector NewSize)
 {
 	if (NewSize == Size)
 	{
@@ -9,71 +9,49 @@ void FVoxelData::SetSize(FIntVector NewSize)
 
 	Clear();
 
-	int32 SSize = NewSize.X * NewSize.Y * NewSize.Z;
+	const int32 SSize = NewSize.X * NewSize.Y * NewSize.Z;
 	Volumes.SetNumZeroed(SSize, true);
 	Size = NewSize;
 }
 
-void FVoxelData::SetGap(FVector NewGap)
+void AVoxelData::SetGap(FVector NewGap)
 {
 	Gap = NewGap;
 }
 
-FORCEINLINE void UVoxelData::SetVolume(FIntVector Idx, float Volume)
+void AVoxelData::SetVolume(const FIntVector Idx, const float Volume)
 {
-	int32 SIdx = SerialIndex(Idx);
+	const int32 SIdx = SerialIndex(Idx);
 	Volumes[SIdx] = Volume;
 }
 
-FORCEINLINE float UVoxelData::GetVolume(FIntVector Idx)
+float AVoxelData::GetVolume(const FIntVector Idx) const
 {
-	int32 SIdx = SerialIndex(Idx);
+	const int32 SIdx = SerialIndex(Idx);
 	return Volumes[SIdx];
 }
 
-FORCEINLINE TArray<float> UVoxelData::GetVolumes()
+TArray<float> AVoxelData::GetVolumeArray() const
 {
 	return Volumes;
 }
 
-FORCEINLINE FIntVector UVoxelData::GetSize()
+FIntVector AVoxelData::GetSize() const
 {
 	return Size;
 }
 
-FORCEINLINE FVector UVoxelData::GetGap()
+FVector AVoxelData::GetGap() const
 {
 	return Gap;
 }
 
-FORCEINLINE int32 UVoxelData::GetSerialIndex_Internal(FIntVector Idx, FIntVector Size)
+int32 AVoxelData::SerialIndex(const FIntVector Idx) const
 {
 	return Idx.X + Idx.Y * Size.X + Idx.Z * Size.X * Size.Y;
 }
 
-FORCEINLINE int32 UVoxelData::SerialIndex(FIntVector Idx)
-{
-	return GetSerialIndex(Idx, Size);
-}
-
-void UVoxelData::Clear()
+void AVoxelData::Clear()
 {
 	std::fill(Volumes.begin(), Volumes.end(), 0.f);
-}
-
-void UVoxelData::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-	DOREPLIFETIME(UVoxelData, Volumes);
-	DOREPLIFETIME(UVoxelData, Size);
-	DOREPLIFETIME(UVoxelData, Gap);
-
-	UBlueprintGeneratedClass* BPClass = Cast<UBlueprintGeneratedClass>(GetClass());
-	if (BPClass) BPClass->GetLifetimeBlueprintReplicationList(OutLifetimeProps);
-}
-
-bool UVoxelData::ReplicateSubobjects(class UActorChannel* Channel, class FOutBunch* Bunch, FReplicationFlags* RepFlags)
-{
-	return true;
 }

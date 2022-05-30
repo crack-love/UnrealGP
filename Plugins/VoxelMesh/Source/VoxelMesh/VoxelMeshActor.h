@@ -1,14 +1,49 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "DynamicMesh3.h"
-#include "ProceduralMeshComponent.h"
-
-#include "VoxelMeshActorEnums.h"
 #include "VoxelMeshActor.generated.h"
+
+class FDynamicMesh3;
+class UProceduralMeshComponent;
+
+// VoxelMesh Normal Mode
+UENUM(BlueprintType)
+enum class EVM_NormalMode : uint8
+{
+	Split = 0,
+	Vertex = 1,
+	Face = 2,
+};
+
+// VoxelMesh Collision Mode (flags)
+UENUM(BlueprintType, meta = (Bitflags))
+enum class EVM_CollisionOption : uint8
+{
+	Never			= 0,
+	Query			= 1 << 0,
+	Physics			= 1 << 1,
+	Simple			= 1 << 2,
+	AsyncCooking	= 1 << 3,
+	All				= 255,
+};
+ENUM_CLASS_FLAGS(EVM_CollisionOption);
+
+// VoxelMesh Primitive Figure
+UENUM(BlueprintType)
+enum class EVM_PrimitiveFigure : uint8
+{
+	Filled = 0,
+	FlatGround = 1,
+};
+
+// VoxelMesh Marching-cubes Compute Mode
+UENUM(BlueprintType)
+enum class EVM_ComputeMode : uint8
+{
+	CPU = 0,
+	GPU = 1,
+};
 
 UCLASS(Blueprintable)
 class VOXELMESH_API AVoxelMeshActor : public AActor
@@ -17,58 +52,60 @@ class VOXELMESH_API AVoxelMeshActor : public AActor
 
 public:
 	AVoxelMeshActor();
-
-// Engine API
-protected:
+	
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
-	virtual bool ReplicateSubobjects(class UActorChannel* Channel, class FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
-
-// Public API (Server)
+	virtual void Tick(float DeltaSeconds) override;
+	
+	// Server interface
 public:
 	UFUNCTION(BlueprintCallable, Server, Reliable)
-	void SetMesh();
+	virtual void SetFigure(EVM_PrimitiveFigure Figure);
 
-	UFUNCTION(BlueprintCallable, Server, Reliable)
-	void SetFigure(EVM_PrimitiveFigure Figure);
-
-	UFUNCTION(BlueprintCallable, Server, Reliable)
+public:
+	UFUNCTION(BlueprintCallable)
 	void SetCollisionMode(EVM_CollisionOption Op);
 
-	UFUNCTION(BlueprintCallable, Server, Reliable)
+	UFUNCTION(BlueprintCallable)
 	void SetNormalMode(EVM_NormalMode Mode);
 
-	UFUNCTION(BlueprintCallable, Server, Reliable)
+	UFUNCTION(BlueprintCallable)
 	void SetComputeMode(EVM_ComputeMode Mode);
 
-private:
+	UFUNCTION(BlueprintCallable)
+	void SetWrapMode(bool bWrap);
+	
 	UFUNCTION()
 	void UpdateCollision();
 
 	UFUNCTION()
 	void UpdateMesh();
 
-// Visible Variables (Replicated)
+	// Request to update mesh following next tick
+	UFUNCTION()
+	void QueueUpdateMesh();
+
+
+
 private:
 
-	UPROPERTY(VisibleAnywhere, Category = CPP, ReplicatedUsing = UpdateMesh)
-	EVM_NormalMode NormalMode;
+	int32 SerialIndex(FIntVector Idx) const;
+	
+private:
+	UPROPERTY(ReplicatedUsing = QueueUpdateMesh)
+	FVoxelData VoxelData;
 
-	UPROPERTY(VisibleAnywhere, Category = CPP, ReplicatedUsing = UpdateCollision)
-	EVM_CollisionOption CollisionOption;
+	FDynamicMesh3* DynamicMesh;
 
-	UPROPERTY(VisibleAnywhere, Category = CPP, Replicated)
-	EVM_ComputeMode ComputeMode;
+	UProceduralMeshComponent* ProceduralMesh;
 
-	UPROPERTY(VisibleAnywhere, Category = CPP, Replicated)
+	bool bNeedUpdateMesh;
+	
 	bool bWrapMesh;
-
-// Hidden Variables
-private:
-	UPROPERTY(ReplicatedUsing = UpdateMesh)
-	class UVoxelData* VoxelData;
-
-	class FDynamicMesh3 DynamicMesh;
-
-	class UProceduralMeshComponent* ProceduralMesh;
+	
+	EVM_NormalMode NormalMode;
+	
+	EVM_ComputeMode ComputeMode;
+	
+	EVM_CollisionOption CollisionOption;
 };

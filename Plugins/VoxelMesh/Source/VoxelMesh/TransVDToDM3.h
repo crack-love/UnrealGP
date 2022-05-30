@@ -12,7 +12,7 @@
 class FTransVDToDM3
 {
 public:
-	static void TransformationCPU(UVoxelData* InVoxelData, FDynamicMesh3* OutDynamicMesh)
+	static void TransformationCPU(const FVoxelData &InVoxelData, FDynamicMesh3* OutDynamicMesh)
 	{
 		FMarchingCubesInput Input;
 		Input.InVoxelData = InVoxelData;

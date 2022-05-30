@@ -3,6 +3,7 @@
 Content/
 Model/
 OriginalModels/
+
 ## Rider Generated
 .idea/*
 Plugins/Developer/RiderLink
