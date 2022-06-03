@@ -32,7 +32,7 @@ public class VoxelMesh : ModuleRules
 					
 				"CoreUObject",
 				"ProceduralMeshComponent",
-				"DynamicMesh"
+				"GeometryCore"
 			}
 			);
 			
@@ -47,7 +47,8 @@ public class VoxelMesh : ModuleRules
 				// ... add private dependencies that you statically link with here ...	
 
 				"ProceduralMeshComponent",
-				"DynamicMesh"
+				"DynamicMesh",
+				"GeometryCore"
 			}
 			);
 		

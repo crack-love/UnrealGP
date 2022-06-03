@@ -2,17 +2,28 @@
 
 #include "VoxelMeshModule.h"
 
+#include "VoxelMeshTools.h"
+#include "MarchingCubesCpu.h"
+#include "MarchingCubesGpu.h"
+#include "TransVdToDm3.h"
+#include "TransDm3ToPmc.h"
+
 #define LOCTEXT_NAMESPACE "FVoxelMeshModule"
 
 void FVoxelMeshModule::StartupModule()
 {
-	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
+	FVoxelMeshTools::McCpu = new FMarchingCubesCpu();
+	FVoxelMeshTools::McGpu = new FMarchingCubesGpu();
+	FVoxelMeshTools::VdToDm3 = new FTransVdToDm3();
+	FVoxelMeshTools::Dm3ToPm = new FTransDm3ToPmc();
 }
 
 void FVoxelMeshModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
+	delete FVoxelMeshTools::McCpu;
+	delete FVoxelMeshTools::McGpu;
+	delete FVoxelMeshTools::VdToDm3;
+	delete FVoxelMeshTools::Dm3ToPm;
 }
 
 #undef LOCTEXT_NAMESPACE

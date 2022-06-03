@@ -1,28 +1,51 @@
 #include "VoxelData.h"
 
-void AVoxelData::SetSize(const FIntVector NewSize)
+AVoxelData::AVoxelData(const FObjectInitializer& Init) : Super(Init)
 {
-	if (NewSize == Size)
+	SetSize({10, 10, 10});	
+	Gap = {10,10,10};
+
+	UE_LOG(LogTemp, Log, TEXT("Voxel Data Ctor Called"));
+}
+
+void AVoxelData::SetSize(const FIntVector InSize, const bool bForceAllocate)
+{
+	if (InSize == Size && !bForceAllocate)
 	{
 		return;
 	}
 
-	Clear();
+	const int32 SSize = InSize.X * InSize.Y * InSize.Z;
+	Volumes.SetNum(SSize, true);
+	Size = InSize;
+	UE_LOG(LogTemp, Log, TEXT("Voxel Size Setted %s"), *Size.ToString());
 
-	const int32 SSize = NewSize.X * NewSize.Y * NewSize.Z;
-	Volumes.SetNumZeroed(SSize, true);
-	Size = NewSize;
+	// set filled
+	std::fill(Volumes.begin(), Volumes.end(), 1.f);
+
+	OnVoxelDataModificated();
 }
 
-void AVoxelData::SetGap(FVector NewGap)
+void AVoxelData::SetGap(FVector InGap)
 {
-	Gap = NewGap;
+	Gap = InGap;
+
+	OnVoxelDataModificated();
 }
 
 void AVoxelData::SetVolume(const FIntVector Idx, const float Volume)
 {
 	const int32 SIdx = SerialIndex(Idx);
 	Volumes[SIdx] = Volume;
+
+	OnVoxelDataModificated();
+}
+
+void AVoxelData::ClearVolumes()
+{
+	std::fill(Volumes.begin(), Volumes.end(), 0.f);
+
+	OnVoxelDataModificated();
 }
 
 float AVoxelData::GetVolume(const FIntVector Idx) const
@@ -49,9 +72,4 @@ FVector AVoxelData::GetGap() const
 int32 AVoxelData::SerialIndex(const FIntVector Idx) const
 {
 	return Idx.X + Idx.Y * Size.X + Idx.Z * Size.X * Size.Y;
-}
-
-void AVoxelData::Clear()
-{
-	std::fill(Volumes.begin(), Volumes.end(), 0.f);
 }

@@ -1,38 +1,45 @@
 #pragma once
 
+#include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "VoxelData.generated.h"
 
-UCLASS()
-class AVoxelData : public AActor
+UCLASS(Abstract)
+class VOXELMESH_API AVoxelData : public AActor
 {
 	GENERATED_BODY()
-	
-	// VoxelData Modification
+
 public:
-	void SetSize(FIntVector NewSize);
+	AVoxelData(const FObjectInitializer& Init);
 
-	void SetGap(FVector NewGap);
+	void SetSize(FIntVector InSize, bool bForceAllocate = false);
 
-	void SetVolume(FIntVector Idx, float Volume);
+	virtual void SetGap(FVector InGap);
 
-	// Clear vertices but remain meta(size,gap)
-	void Clear();
+	virtual void SetVolume(FIntVector Idx, float Volume);
+
+	virtual float GetVolume(FIntVector Idx) const;
+
+	virtual TArray<float> GetVolumeArray() const;
+
+	virtual FIntVector GetSize() const;
+
+	virtual FVector GetGap() const;
+
+	void ClearVolumes();
+
+protected:
+	virtual void OnVoxelDataModificated() {}
 	
-	float GetVolume(FIntVector Idx) const;
-
-	TArray<float> GetVolumeArray() const;
-
-	FIntVector GetSize() const;
-
-	FVector GetGap() const;
-	
-private:
+private:	
 	int SerialIndex(const FIntVector Idx) const;
-	
-	TArray<float> Volumes;
 
+	UPROPERTY(EditDefaultsOnly, Category=Voxel)
 	FIntVector Size;
 
+	UPROPERTY(EditDefaultsOnly, Category=Voxel)
 	FVector Gap;
+	
+	UPROPERTY()
+	TArray<float> Volumes;
 };
