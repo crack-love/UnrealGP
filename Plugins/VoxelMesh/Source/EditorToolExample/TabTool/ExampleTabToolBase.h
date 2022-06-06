@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ExampleTabToolBase.h"
 #include "EditorToolExample/IEditorToolExampleModule.h"
 #include "EditorToolExample/EditorToolExampleModule.h"
 

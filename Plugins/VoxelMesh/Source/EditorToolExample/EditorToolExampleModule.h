@@ -15,7 +15,10 @@ public:
 	virtual void AddModuleListeners() override;
 
 public:
-	static FEditorToolExampleModule& Get();
+	inline static FEditorToolExampleModule& Get()
+	{
+		return FModuleManager::LoadModuleChecked<FEditorToolExampleModule>("EditorToolExample");
+	}
 	
 	static bool IsAvailable();
 

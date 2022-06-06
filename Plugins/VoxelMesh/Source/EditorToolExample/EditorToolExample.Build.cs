@@ -14,8 +14,9 @@ public class EditorToolExample : ModuleRules
                 "Core",
                 "CoreUObject",
                 "Engine",
-                "SlateCore",
                 "Slate",
+                "SlateCore",
+                "UMG",
                 "UnrealEd",
             }
         );
@@ -30,6 +31,7 @@ public class EditorToolExample : ModuleRules
                 "Slate",
                 "UnrealEd",
                 "EditorStyle",
+                "EditorFramework"
             }
         );
     }

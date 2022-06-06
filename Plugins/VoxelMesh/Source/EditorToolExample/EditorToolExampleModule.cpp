@@ -6,16 +6,12 @@
 #include "CustomDataType/ExampleDataTypeActions.h"
 #include "DetailCustomization/ExampleActor.h"
 #include "DetailCustomization/ExampleActorDetails.h"
+#include "EditorMode/ExampleEdModeTool.h"
 #include "MenuTool/MenuTool.h"
 #include "TabTool/TabTool.h"
 
 TSharedRef<FWorkspaceItem> FEditorToolExampleModule::MenuRoot =
 	FWorkspaceItem::NewGroup(FText::FromString("Menu Root"));
-
-inline FEditorToolExampleModule& FEditorToolExampleModule::Get()
-{
-	return FModuleManager::LoadModuleChecked<FEditorToolExampleModule>("EditorToolExample");
-}
 
 inline bool FEditorToolExampleModule::IsAvailable()
 {
@@ -32,6 +28,7 @@ void FEditorToolExampleModule::AddModuleListeners()
 	// add tools later
 	ModuleListeners.Add(MakeShareable(new MenuTool));
 	ModuleListeners.Add(MakeShareable(new TabTool()));
+	ModuleListeners.Add(MakeShareable(new ExampleEdModeTool));
 }
 
 void FEditorToolExampleModule::StartupModule()
