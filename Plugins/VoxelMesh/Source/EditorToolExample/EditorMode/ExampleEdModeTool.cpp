@@ -32,7 +32,7 @@ void ExampleEdModeTool::RegisterStyleSet()
 	StyleSet = MakeShareable(new FSlateStyleSet("ExampleEdModeToolStyle"));
 	StyleSet->SetContentRoot(FPaths::ProjectDir() / TEXT("Content/EditorResources"));
 	StyleSet->SetCoreContentRoot(FPaths::ProjectDir() / TEXT("Content/EditorResources"));
-
+	UE_LOG(LogTemp, Log, TEXT("%s"), *(FPaths::ProjectDir() / TEXT("Content/EditorResources")));
 	// Spline editor
 	{
 		StyleSet->Set("ExampleEdMode", new IMAGE_BRUSH(TEXT("IconExampleEditorMode"), Icon40x40));

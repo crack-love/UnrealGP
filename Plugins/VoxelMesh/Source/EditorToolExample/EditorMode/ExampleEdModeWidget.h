@@ -16,4 +16,10 @@ public:
 
 	// Util Functions
 	class FExampleEdMode* GetEdMode() const;
+
+	// point
+	FReply OnAddPoint();
+	bool CanAddPoint() const;
+	FReply OnRemovePoint();
+	bool CanRemovePoint() const;
 };
