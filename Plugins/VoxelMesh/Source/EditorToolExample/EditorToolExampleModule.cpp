@@ -2,8 +2,11 @@
 
 #include "AssetToolsModule.h"
 #include "IAssetTools.h"
+#include "ISettingsContainer.h"
+#include "ISettingsModule.h"
 #include "LevelEditor.h"
 #include "CustomDataType/ExampleDataTypeActions.h"
+#include "CustomProjectSettings/ExampleSettings.h"
 #include "DetailCustomization/ExampleActor.h"
 #include "DetailCustomization/ExampleActorDetails.h"
 #include "EditorMode/ExampleEdModeTool.h"
@@ -71,6 +74,22 @@ void FEditorToolExampleModule::StartupModule()
 		// saved it here for unregister later
 		CreatedAssetTypeActions.Add(Action);
 	}
+
+	// register settings:
+	{
+		ISettingsModule* SettingsModule = FModuleManager::GetModulePtr<ISettingsModule>("Settings");
+		if (SettingsModule)
+		{
+			TSharedPtr<ISettingsContainer> ProjectSettingsContainer = SettingsModule->GetContainer("Project");
+			ProjectSettingsContainer->DescribeCategory("ExampleCategory", FText::FromString("Example Category"), FText::FromString("Example settings description text here"));
+
+			SettingsModule->RegisterSettings("Project", "ExampleCategory", "ExampleSettings",
+				FText::FromString("Example Settings"),
+				FText::FromString("Configure Example Settings"),
+				GetMutableDefault<UExampleSettings>()
+			);
+		}
+	}
 	
 	IEditorToolExampleModule::StartupModule();
 }
@@ -92,6 +111,13 @@ void FEditorToolExampleModule::ShutdownModule()
 		{
 			AssetTools.UnregisterAssetTypeActions(CreatedAssetTypeActions[i].ToSharedRef());
 		}
+	}
+
+	// unregister settings
+	ISettingsModule* SettingsModule = FModuleManager::GetModulePtr<ISettingsModule>("Settings");
+	if (SettingsModule)
+	{
+		SettingsModule->UnregisterSettings("Project", "ExampleCategory", "ExampleSettings");
 	}
 	
 	IEditorToolExampleModule::ShutdownModule();

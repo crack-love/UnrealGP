@@ -1,4 +1,5 @@
 #include "ExampleEdMode.h"
+
 #include "ScopedTransaction.h"
 #include "ExampleEdModeToolkit.h"
 
@@ -7,6 +8,30 @@
 IMPLEMENT_HIT_PROXY(HExamplePointProxy, HHitProxy);
 
 const FEditorModeID FExampleEdMode::EM_Example(TEXT("EM_Example"));
+
+class ExampleEditorCommands : public TCommands<ExampleEditorCommands>
+{
+public:
+	ExampleEditorCommands() : TCommands <ExampleEditorCommands>
+		(
+			"ExampleEditor",    // Context name for fast lookup
+			FText::FromString(TEXT("Example Editor")),  // context name for displaying
+			NAME_None,  // Parent
+			FEditorStyle::GetStyleSetName()
+			)
+	{
+	}
+
+#define LOCTEXT_NAMESPACE ""
+	virtual void RegisterCommands() override
+	{
+		UI_COMMAND(DeletePoint, "Delete Point", "Delete the currently selected point.", EUserInterfaceActionType::Button, FInputChord(EKeys::Delete));
+	}
+#undef LOCTEXT_NAMESPACE
+
+public:
+	TSharedPtr<FUICommandInfo> DeletePoint;
+};
 
 void FExampleEdMode::Render(const FSceneView* View, FViewport* Viewport, FPrimitiveDrawInterface* PDI)
 {
@@ -55,6 +80,21 @@ bool FExampleEdMode::HandleClick(FEditorViewportClient* InViewportClient, HHitPr
 		}
 	}
 
+	// command
+	if (HitProxy && isHandled && Click.GetKey() == EKeys::RightMouseButton)
+	{
+		TSharedPtr<SWidget> MenuWidget = GenerateContextMenu(InViewportClient);
+		if (MenuWidget.IsValid())
+		{
+			FSlateApplication::Get().PushMenu(
+				Owner->GetToolkitHost()->GetParentWidget(),
+				FWidgetPath(),
+				MenuWidget.ToSharedRef(),
+				FSlateApplication::Get().GetCursorPos(),
+				FPopupTransitionEffect(FPopupTransitionEffect::ContextMenu));
+		}
+	}
+
 	return isHandled;
 }
 
@@ -71,6 +111,8 @@ void FExampleEdMode::Enter()
 	// reset pointer
 	currentSelectedTarget = nullptr;
 	currentSelectedIndex = -1;
+
+	MapCommands();
 }
 
 void FExampleEdMode::Exit()
@@ -117,10 +159,15 @@ bool FExampleEdMode::CanAddPoint() const
 
 void FExampleEdMode::RemovePoint()
 {
+	UE_LOG(LogTemp, Log, TEXT("Start RemovePoint (hasValidSelection:%d)"), HasValidSelection());
+	
 	if (HasValidSelection())
 	{
 		const FScopedTransaction Transaction(FText::FromString("Remove Point"));
 
+		UE_LOG(LogTemp, Log, TEXT("removePoint name:%s idx:%d"), *currentSelectedTarget->GetName(),
+			currentSelectedIndex);
+		
 		currentSelectedTarget->Modify();
 		currentSelectedTarget->Points.RemoveAt(currentSelectedIndex);
 		// deselect the point
@@ -149,4 +196,109 @@ void FExampleEdMode::SelectPoint(AExampleTargetPoint* actor, int32 index)
 		GEditor->SelectNone(true, true);
 		GEditor->SelectActor(currentSelectedTarget.Get(), true, true);
 	}
+}
+
+bool FExampleEdMode::InputDelta(FEditorViewportClient* InViewportClient, FViewport* InViewport, FVector& InDrag, FRotator& InRot, FVector& InScale)
+{	
+	if (InViewportClient->GetCurrentWidgetAxis() == EAxisList::None)
+	{
+		return false;
+	}
+
+	if (HasValidSelection())
+	{
+		if (!InDrag.IsZero())
+		{
+			currentSelectedTarget->Modify();
+			currentSelectedTarget->Points[currentSelectedIndex] += InDrag;
+		}
+		return true;
+	}
+
+	return false;
+}
+
+bool FExampleEdMode::ShowModeWidgets() const
+{
+	return true;
+}
+
+bool FExampleEdMode::ShouldDrawWidget() const
+{
+	return true;
+}
+
+bool FExampleEdMode::UsesTransformWidget() const
+{
+	return true;
+}
+
+FVector FExampleEdMode::GetWidgetLocation() const
+{
+	if (HasValidSelection())
+	{
+		return currentSelectedTarget->Points[currentSelectedIndex];
+	}
+	
+	return FEdMode::GetWidgetLocation();
+}
+
+FExampleEdMode::FExampleEdMode()
+{
+	ExampleEdModeActions = MakeShareable(new FUICommandList);
+	ExampleEditorCommands::Register();
+}
+
+FExampleEdMode::~FExampleEdMode()
+{
+	ExampleEditorCommands::Unregister();
+}
+
+void FExampleEdMode::MapCommands()
+{
+	const auto& Commands = ExampleEditorCommands::Get();
+
+	ExampleEdModeActions->MapAction(
+		Commands.DeletePoint,
+		FExecuteAction::CreateSP(this, &FExampleEdMode::RemovePoint),
+		FCanExecuteAction::CreateSP(this, &FExampleEdMode::CanRemovePoint));
+}
+
+bool FExampleEdMode::InputKey(FEditorViewportClient* ViewportClient, FViewport* Viewport, FKey Key, EInputEvent Event)
+{
+	bool isHandled = false;
+
+	if (!isHandled && Event == IE_Pressed)
+	{
+	UE_LOG(LogTemp, Log, TEXT("InputKey %s %d"), *Key.ToString(), Event)
+	
+		isHandled = ExampleEdModeActions->ProcessCommandBindings(Key, FSlateApplication::Get().GetModifierKeys(), false);
+	}
+
+	return isHandled;
+}
+
+TSharedPtr<SWidget> FExampleEdMode::GenerateContextMenu(FEditorViewportClient* InViewportClient) const
+{
+	FMenuBuilder MenuBuilder(true, NULL);
+
+	MenuBuilder.PushCommandList(ExampleEdModeActions.ToSharedRef());
+	MenuBuilder.BeginSection("Example Section");
+	if (HasValidSelection())
+	{
+		// add label for point index
+		TSharedRef<SWidget> LabelWidget =
+			SNew(STextBlock)
+			.Text(FText::FromString(FString::FromInt(currentSelectedIndex)))
+			.ColorAndOpacity(FLinearColor::Green);
+		MenuBuilder.AddWidget(LabelWidget, FText::FromString(TEXT("Point Index: ")));
+		MenuBuilder.AddMenuSeparator();
+		// add delete point entry
+		MenuBuilder.AddMenuEntry(ExampleEditorCommands::Get().DeletePoint);
+	}
+	MenuBuilder.EndSection();
+	MenuBuilder.PopCommandList();
+
+	TSharedPtr<SWidget> MenuWidget = MenuBuilder.MakeWidget();
+	return MenuWidget;
 }

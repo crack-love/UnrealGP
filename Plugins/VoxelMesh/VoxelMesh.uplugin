@@ -21,6 +21,11 @@
 			"LoadingPhase": "Default"
 		},
 		{
+			"Name": "VoxelMeshEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		},
+		{
 			"Name": "EditorToolExample",
 			"Type": "Editor",
 			"LoadingPhase": "PostEngineInit",
