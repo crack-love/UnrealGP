@@ -11,12 +11,12 @@ public:
 
 	void Construct(const FArguments& InArgs);
 
-	// Util Functions
-	class FExampleEdMode* GetEdMode() const;
-
-	// point
-	FReply OnAddPoint();
-	bool CanAddPoint() const;
-	FReply OnRemovePoint();
-	bool CanRemovePoint() const;
+	// // Util Functions
+	// class FExampleEdMode* GetEdMode() const;
+	//
+	// // point
+	// FReply OnAddPoint();
+	// bool CanAddPoint() const;
+	// FReply OnRemovePoint();
+	// bool CanRemovePoint() const;
 };

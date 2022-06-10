@@ -5,11 +5,12 @@
 class FVoxelMeshEdMode : public FEdMode
 {
 public:
-	const static FEditorModeID EM_VoxelMesh;
+	static const FEditorModeID EditorModeID;
 
-	// FEdMode interface
+	// beg FEdMode
 	virtual void Enter() override;
 	virtual void Exit() override;
+	// end FEdMode
 
 	// pointer
 	// void AddPoint();

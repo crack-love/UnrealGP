@@ -1,7 +1,6 @@
 #include "VoxelMeshEdModeWidget.h"
 
 #include "UnrealEd.h"
-#include "VoxelMeshEdMode.h"
 
 void SVoxelMeshEdModeWidget::Construct(const FArguments& InArgs)
 {
@@ -20,6 +19,8 @@ void SVoxelMeshEdModeWidget::Construct(const FArguments& InArgs)
 				SNew(STextBlock)
 				.Text(FText::FromString(TEXT("This is a editor mode example.")))
 			]
+		]
+	];
 			// + SVerticalBox::Slot()
 			// .AutoHeight()
 			// .Padding(0.f, 5.f, 0.f, 0.f)
@@ -46,35 +47,33 @@ void SVoxelMeshEdModeWidget::Construct(const FArguments& InArgs)
 			// 		.IsEnabled(this, &SVoxelMeshEdModeWidget::CanRemovePoint)
 			// 	]
 			// ]
-		]
-	];
 }
 
-FExampleEdMode* SVoxelMeshEdModeWidget::GetEdMode() const
-{
-	return (FExampleEdMode*)GLevelEditorModeTools().GetActiveMode(FVoxelMeshEdMode::EM_VoxelMesh);
-}
-
-FReply SVoxelMeshEdModeWidget::OnAddPoint()
-{
-	//GetEdMode()->AddPoint();
-	return FReply::Handled();
-}
-
-bool SVoxelMeshEdModeWidget::CanAddPoint() const
-{
-	//return GetEdMode()->CanAddPoint();
-	return  true;
-}
-
-FReply SVoxelMeshEdModeWidget::OnRemovePoint()
-{
-	//GetEdMode()->RemovePoint();
-	return FReply::Handled();
-}
-
-bool SVoxelMeshEdModeWidget::CanRemovePoint() const
-{
-	//return GetEdMode()->CanRemovePoint();
-	return true;
-}
+// FExampleEdMode* SVoxelMeshEdModeWidget::GetEdMode() const
+// {
+// 	return (FExampleEdMode*)GLevelEditorModeTools().GetActiveMode(FVoxelMeshEdMode::EditorModeID);
+// }
+//
+// FReply SVoxelMeshEdModeWidget::OnAddPoint()
+// {
+// 	//GetEdMode()->AddPoint();
+// 	return FReply::Handled();
+// }
+//
+// bool SVoxelMeshEdModeWidget::CanAddPoint() const
+// {
+// 	//return GetEdMode()->CanAddPoint();
+// 	return  true;
+// }
+//
+// FReply SVoxelMeshEdModeWidget::OnRemovePoint()
+// {
+// 	//GetEdMode()->RemovePoint();
+// 	return FReply::Handled();
+// }
+//
+// bool SVoxelMeshEdModeWidget::CanRemovePoint() const
+// {
+// 	//return GetEdMode()->CanRemovePoint();
+// 	return true;
+// }

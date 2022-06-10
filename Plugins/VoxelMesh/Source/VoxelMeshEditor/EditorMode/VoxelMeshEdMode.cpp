@@ -3,8 +3,7 @@
 #include "VoxelMeshEdModeToolkit.h"
 #include "Toolkits/ToolkitManager.h"
 
-const FEditorModeID FVoxelMeshEdMode::EM_VoxelMesh(TEXT("EM_VoxelMesh"));
-
+const FEditorModeID FVoxelMeshEdMode::EditorModeID(TEXT("EM_VoxelMesh"));
 
 void FVoxelMeshEdMode::Enter()
 {

@@ -6,6 +6,11 @@
 class FVoxelMeshEditorModule final : public FListenableModule
 {
 public:
+	static FVoxelMeshEditorModule& Get()
+	{		
+		return FModuleManager::LoadModuleChecked<FVoxelMeshEditorModule>(TEXT("VoxelMeshEditor"));
+	}
+	
 	virtual void StartupModule() override;
 	
 	virtual void ShutdownModule() override;
@@ -19,12 +24,6 @@ public:
 	// }
 	/* end ITabToolMenuRoot */
 	
-	static FVoxelMeshEditorModule& Get()
-	{		
-		return FModuleManager::LoadModuleChecked<FVoxelMeshEditorModule>("EditorToolExample");
-	}
-
-
 	// static bool IsAvailable();
 	//
 	// static TSharedRef<FWorkspaceItem> GetMenuRoot();
