@@ -1,9 +1,9 @@
 #pragma once
 
-#include "EditorToolExample/IEditorToolExampleModule.h"
+#include "ExampleEditor/IExampleEditorModule.h"
 
 class MenuTool :
-	public IEditorToolExampleModuleListener,
+	public IExampleEditorModuleListener,
 	public TSharedFromThis<MenuTool>
 {
 public:

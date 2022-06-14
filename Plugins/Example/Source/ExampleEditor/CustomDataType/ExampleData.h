@@ -3,7 +3,7 @@
 #include "ExampleData.generated.h"
 
 UCLASS(Blueprintable)
-class EDITORTOOLEXAMPLE_API UExampleData : public UObject
+class EXAMPLEEDITOR_API UExampleData : public UObject
 {
 	GENERATED_BODY()
 

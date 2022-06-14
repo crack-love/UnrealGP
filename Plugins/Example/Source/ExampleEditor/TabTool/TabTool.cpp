@@ -1,11 +1,11 @@
 #include "TabTool.h"
 #include "TabToolPanel.h"
-#include "EditorToolExample/EditorToolExampleModule.h"
+#include "ExampleEditor/ExampleEditorModule.h"
 
 void TabTool::OnStartupModule()
 {
 	FExampleTabToolBase::OnStartupModule();
-	FEditorToolExampleModule::Get().AddMenuExtension(FMenuExtensionDelegate::CreateRaw(this, &TabTool::MakeMenuEntry), FName("Section_2"));
+	FExampleEditorModule::Get().AddMenuExtension(FMenuExtensionDelegate::CreateRaw(this, &TabTool::MakeMenuEntry), FName("Section_2"));
 }
 
 void TabTool::OnShutdownModule()

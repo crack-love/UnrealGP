@@ -1,15 +1,15 @@
 #pragma once
 
-class IEditorToolExampleModuleListener
+class IExampleEditorModuleListener
 {
 public:
-    virtual ~IEditorToolExampleModuleListener() = default;
+    virtual ~IExampleEditorModuleListener() = default;
     
     virtual void OnStartupModule() {};
     virtual void OnShutdownModule() {};
 };
 
-class IEditorToolExampleModule : public IModuleInterface
+class IExampleEditorModule : public IModuleInterface
 {
 public:
     virtual void StartupModule() override
@@ -35,5 +35,5 @@ public:
     virtual void AddModuleListeners() {};
 
 protected:
-    TArray<TSharedRef<IEditorToolExampleModuleListener>> ModuleListeners;
+    TArray<TSharedRef<IExampleEditorModuleListener>> ModuleListeners;
 };

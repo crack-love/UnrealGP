@@ -1,4 +1,4 @@
-#include "EditorToolExampleModule.h"
+#include "ExampleEditorModule.h"
 
 #include "AssetToolsModule.h"
 #include "IAssetTools.h"
@@ -13,29 +13,33 @@
 #include "MenuTool/MenuTool.h"
 #include "TabTool/TabTool.h"
 
-TSharedRef<FWorkspaceItem> FEditorToolExampleModule::MenuRoot =
+TSharedRef<FWorkspaceItem> FExampleEditorModule::MenuRoot =
 	FWorkspaceItem::NewGroup(FText::FromString("Menu Root"));
 
-inline bool FEditorToolExampleModule::IsAvailable()
+inline bool FExampleEditorModule::IsAvailable()
 {
-	return FModuleManager::Get().IsModuleLoaded("EditorToolExample");
+	return FModuleManager::Get().IsModuleLoaded("ExampleEditor");
 }
 
-TSharedRef<FWorkspaceItem> FEditorToolExampleModule::GetMenuRoot()
+TSharedRef<FWorkspaceItem> FExampleEditorModule::GetMenuRoot()
 {
 	return MenuRoot;
 }
 
-void FEditorToolExampleModule::AddModuleListeners()
+void FExampleEditorModule::AddModuleListeners()
 {
 	// add tools later
-	ModuleListeners.Add(MakeShareable(new MenuTool));
-	ModuleListeners.Add(MakeShareable(new TabTool()));
-	ModuleListeners.Add(MakeShareable(new ExampleEdModeTool));
+	//ModuleListeners.Add(MakeShareable(new MenuTool));
+	//ModuleListeners.Add(MakeShareable(new TabTool()));
+	//ModuleListeners.Add(MakeShareable(new ExampleEdModeTool));
 }
 
-void FEditorToolExampleModule::StartupModule()
+void FExampleEditorModule::StartupModule()
 {
+	//////////////////
+	return;
+	///////////////////
+
 	if (!IsRunningCommandlet())
 	{
 		FLevelEditorModule& LevelEditorModule =
@@ -51,7 +55,7 @@ void FEditorToolExampleModule::StartupModule()
 			nullptr,
 			FMenuBarExtensionDelegate::CreateRaw(
 				this,
-				&FEditorToolExampleModule::MakePulldownMenu));
+				&FExampleEditorModule::MakePulldownMenu));
 		
 		LevelEditorMenuExtensibilityManager->AddExtender(MenuExtender);
 	}
@@ -91,11 +95,16 @@ void FEditorToolExampleModule::StartupModule()
 		}
 	}
 	
-	IEditorToolExampleModule::StartupModule();
+	IExampleEditorModule::StartupModule();
 }
 
-void FEditorToolExampleModule::ShutdownModule()
+void FExampleEditorModule::ShutdownModule()
 {
+	//////////////////
+	return;
+	///////////////////
+	
+
 	// unregister custom layouts
 	if (FModuleManager::Get().IsModuleLoaded("PropertyEditor"))
 	{
@@ -120,10 +129,10 @@ void FEditorToolExampleModule::ShutdownModule()
 		SettingsModule->UnregisterSettings("Project", "ExampleCategory", "ExampleSettings");
 	}
 	
-	IEditorToolExampleModule::ShutdownModule();
+	IExampleEditorModule::ShutdownModule();
 }
 
-void FEditorToolExampleModule::AddMenuExtension(
+void FExampleEditorModule::AddMenuExtension(
 	const FMenuExtensionDelegate &extensionDelegate,
 	FName extensionHook,
 	const TSharedPtr<FUICommandList> &CommandList,
@@ -132,18 +141,18 @@ void FEditorToolExampleModule::AddMenuExtension(
 	MenuExtender->AddMenuExtension(extensionHook, position, CommandList, extensionDelegate);
 }
 
-void FEditorToolExampleModule::MakePulldownMenu(FMenuBarBuilder &menuBuilder)
+void FExampleEditorModule::MakePulldownMenu(FMenuBarBuilder &menuBuilder)
 {
 	menuBuilder.AddPullDownMenu(
 		FText::FromString("Example"),
 		FText::FromString("Open the Example menu"),
-		FNewMenuDelegate::CreateRaw(this, &FEditorToolExampleModule::FillPulldownMenu),
+		FNewMenuDelegate::CreateRaw(this, &FExampleEditorModule::FillPulldownMenu),
 		"Example",
 		FName(TEXT("ExampleMenu"))
 	);
 }
 
-void FEditorToolExampleModule::FillPulldownMenu(FMenuBuilder &menuBuilder) const
+void FExampleEditorModule::FillPulldownMenu(FMenuBuilder &menuBuilder) const
 {
 	// just a frame for tools to fill in
 	menuBuilder.BeginSection("ExampleSection", FText::FromString("Section 1"));
@@ -155,4 +164,4 @@ void FEditorToolExampleModule::FillPulldownMenu(FMenuBuilder &menuBuilder) const
 	menuBuilder.EndSection();
 }
 
-IMPLEMENT_GAME_MODULE(FEditorToolExampleModule, EditorToolExample)
+IMPLEMENT_GAME_MODULE(FExampleEditorModule, ExampleEditor)

@@ -1,9 +1,9 @@
 using UnrealBuildTool;
 using System.IO;
 
-public class EditorToolExample : ModuleRules
+public class ExampleEditor : ModuleRules
 {
-	public EditorToolExample(ReadOnlyTargetRules Target) : base(Target)
+	public ExampleEditor(ReadOnlyTargetRules Target) : base(Target)
     {
         PublicIncludePaths.AddRange(new string[] { });
 

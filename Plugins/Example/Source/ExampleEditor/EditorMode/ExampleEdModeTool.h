@@ -1,5 +1,5 @@
 #pragma once
-#include "EditorToolExample/TabTool/ExampleTabToolBase.h"
+#include "ExampleEditor/TabTool/ExampleTabToolBase.h"
 
 class ExampleEdModeTool : public FExampleTabToolBase
 {

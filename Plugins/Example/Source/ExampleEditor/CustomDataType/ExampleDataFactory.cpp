@@ -1,6 +1,6 @@
 #include "ExampleDataFactory.h"
 #include "ExampleData.h"
-#include "EditorToolExample/EditorToolExampleModule.h"
+#include "ExampleEditor/ExampleEditorModule.h"
 
 UExampleDataFactory::UExampleDataFactory(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
