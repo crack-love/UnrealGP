@@ -1,6 +1,6 @@
 #include "VoxelMeshEditorModule.h"
 
-#include "EditorMode/VoxelMeshEdModeEntry.h"
+#include "EditorMode/VoxelMeshEdModeRegister.h"
 
 // TSharedRef<FWorkspaceItem> FVoxelMeshEditorModule::MenuRoot =
 // 	FWorkspaceItem::NewGroup(FText::FromString("Menu Root"));
@@ -21,7 +21,7 @@ void FVoxelMeshEditorModule::ShutdownModule()
 
 void FVoxelMeshEditorModule::AddModuleListeners()
 {
-	ModuleListeners.Add(MakeShareable(new FVoxelMeshEdModeEntry));
+	ModuleListeners.Add(MakeShareable(new FVoxelMeshEdModeRegister));
 }
 
 

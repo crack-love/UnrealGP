@@ -2,7 +2,7 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "VoxelMesh",
+	"FriendlyName": "Example",
 	"Description": "",
 	"Category": "Other",
 	"CreatedBy": "KYG",
@@ -10,30 +10,15 @@
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
-	"CanContainContent": true,
+	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "VoxelMesh",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "VoxelMeshEditor",
+			"Name": "ExampleEditor",
 			"Type": "Editor",
 			"LoadingPhase": "PostEngineInit"
-		}
-	],
-	"Plugins": [
-		{
-			"Name": "ProceduralMeshComponent",
-			"Enabled": true
-		},
-		{
-			"Name": "GeometryProcessing",
-			"Enabled": true
 		}
 	]
 }

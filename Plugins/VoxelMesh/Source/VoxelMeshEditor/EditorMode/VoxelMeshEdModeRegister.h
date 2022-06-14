@@ -2,7 +2,7 @@
 
 #include "VoxelMeshEditor/ListenableModule.h"
 
-class FVoxelMeshEdModeEntry : public IModuleListener
+class FVoxelMeshEdModeRegister : public IModuleListener
 {
 public:
 	virtual void OnStartupModule() override;

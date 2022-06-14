@@ -1,4 +1,4 @@
-#include "VoxelMeshEdModeEntry.h"
+#include "VoxelMeshEdModeRegister.h"
 
 #include "UnrealEd.h"
 #include "VoxelMeshEdMode.h"
@@ -6,19 +6,19 @@
 #define IMAGE_BRUSH(RelativePath, ...) \
 	FSlateImageBrush(StyleSet->RootToContentDir(RelativePath, TEXT(".png")), __VA_ARGS__)
 
-void FVoxelMeshEdModeEntry::OnStartupModule()
+void FVoxelMeshEdModeRegister::OnStartupModule()
 {
 	RegisterStyleSet();
 	RegisterEditorMode();
 }
 
-void FVoxelMeshEdModeEntry::OnShutdownModule()
+void FVoxelMeshEdModeRegister::OnShutdownModule()
 {
 	UnregisterStyleSet();
 	UnregisterEditorMode();
 }
 
-void FVoxelMeshEdModeEntry::RegisterStyleSet()
+void FVoxelMeshEdModeRegister::RegisterStyleSet()
 {
 	// Only register once
 	if (StyleSet.IsValid())
@@ -48,7 +48,7 @@ void FVoxelMeshEdModeEntry::RegisterStyleSet()
 	FSlateStyleRegistry::RegisterSlateStyle(*StyleSet.Get());
 }
 
-void FVoxelMeshEdModeEntry::UnregisterStyleSet()
+void FVoxelMeshEdModeRegister::UnregisterStyleSet()
 {
 	if (StyleSet.IsValid())
 	{
@@ -58,7 +58,7 @@ void FVoxelMeshEdModeEntry::UnregisterStyleSet()
 	}
 }
 
-void FVoxelMeshEdModeEntry::RegisterEditorMode() const
+void FVoxelMeshEdModeRegister::RegisterEditorMode() const
 {
 	FEditorModeID ModeID = FVoxelMeshEdMode::EditorModeID;
 	FText ModeName = FText::FromString(TEXT("VMEditorMode"));
@@ -74,7 +74,7 @@ void FVoxelMeshEdModeEntry::RegisterEditorMode() const
 		500);
 }
 
-void FVoxelMeshEdModeEntry::UnregisterEditorMode() const
+void FVoxelMeshEdModeRegister::UnregisterEditorMode() const
 {
 	FEditorModeRegistry::Get().UnregisterMode(FVoxelMeshEdMode::EditorModeID);
 }
