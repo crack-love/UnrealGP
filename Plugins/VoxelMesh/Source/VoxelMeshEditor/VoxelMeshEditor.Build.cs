@@ -17,6 +17,7 @@ public class VoxelMeshEditor : ModuleRules
 				"Slate",
 				"SlateCore",
 				"UnrealEd",
+				"VoxelMesh",
 			}
 		);
 
@@ -33,7 +34,11 @@ public class VoxelMeshEditor : ModuleRules
 				"EditorStyle",
 				"EditorFramework",
 				"InputCore",
+				"ProceduralMeshComponent",
+				"VoxelMesh",
 			}
 		);
+
+		
 	}
 }

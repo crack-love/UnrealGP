@@ -4,7 +4,7 @@
 #include "ExampleActor.generated.h"
 
 UCLASS()
-class EXAMPLEEDITOR_API AExampleActor : public AActor
+class EDITORTOOL_API AExampleActor : public AActor
 {
 	GENERATED_BODY()
 public:

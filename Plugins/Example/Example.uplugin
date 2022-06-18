@@ -16,7 +16,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "ExampleEditor",
+			"Name": "EditorTool",
 			"Type": "Editor",
 			"LoadingPhase": "PostEngineInit"
 		}

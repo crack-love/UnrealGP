@@ -3,7 +3,7 @@
 #include "ExampleTargetPoint.generated.h"
 
 UCLASS()
-class EXAMPLEEDITOR_API AExampleTargetPoint : public ATargetPoint
+class EDITORTOOL_API AExampleTargetPoint : public ATargetPoint
 {
 	GENERATED_BODY()
 

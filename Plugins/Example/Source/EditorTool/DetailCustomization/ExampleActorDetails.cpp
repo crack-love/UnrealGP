@@ -3,7 +3,7 @@
 #include "DetailLayoutBuilder.h"
 #include "DetailWidgetRow.h"
 #include "ExampleActor.h"
-#include "ExampleEditor/ExampleEditorModule.h"
+#include "EditorTool/EditorToolModule.h"
 
 TSharedRef<IDetailCustomization> FExampleActorDetails::MakeInstance()
 {

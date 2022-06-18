@@ -19,6 +19,12 @@ void SVoxelMeshEdModeWidget::Construct(const FArguments& InArgs)
 				SNew(STextBlock)
 				.Text(FText::FromString(TEXT("This is a editor mode example.")))
 			]
+			+ SVerticalBox::Slot()
+			.AutoHeight()
+			.Padding(0.f, 5.f, 0.f, 0.f)
+			[
+				SNew(SCheckBox)
+			]
 		]
 	];
 			// + SVerticalBox::Slot()

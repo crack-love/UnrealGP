@@ -2,9 +2,9 @@
 
 #include "IAssetTypeActions.h"
 #include "UnrealEd.h"
-#include "IExampleEditorModule.h"
+#include "IEditorToolModule.h"
 
-class FExampleEditorModule : public IExampleEditorModule
+class FEditorToolModule : public IEditorToolModule
 {
 	/* IVoxelMeshEditorModule */
 public:
@@ -15,9 +15,9 @@ public:
 	virtual void AddModuleListeners() override;
 
 public:
-	inline static FExampleEditorModule& Get()
+	inline static FEditorToolModule& Get()
 	{
-		return FModuleManager::LoadModuleChecked<FExampleEditorModule>("ExampleEditor");
+		return FModuleManager::LoadModuleChecked<FEditorToolModule>("EditorTool");
 	}
 	
 	static bool IsAvailable();

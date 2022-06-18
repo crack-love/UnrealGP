@@ -1,5 +1,4 @@
 #include "TabToolPanel.h"
-#include "ExampleEditor/ExampleEditorModule.h"
 
 void TabToolPanel::Construct(const FArguments& InArgs)
 {

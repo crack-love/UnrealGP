@@ -34,15 +34,15 @@ void FVoxelMeshEdModeRegister::RegisterStyleSet()
 		
 		// set path
 		StyleSet->SetContentRoot(FPaths::ProjectPluginsDir() /
-			TEXT("VoxelMesh/Content/EditorResources"));
+			TEXT("VoxelMesh/Resource/Editor"));
 		StyleSet->SetCoreContentRoot(FPaths::ProjectPluginsDir() /
-			TEXT("VoxelMesh/Content/EditorResources"));
+			TEXT("VoxelMesh/Resource/Editor"));
 	
 		// set image
-		StyleSet->Set("IconVMEdMode",
-			new IMAGE_BRUSH(TEXT("IconExampleEditorMode"), Icon40x40));
-		StyleSet->Set("IconVMEdMode.Small",
-			new IMAGE_BRUSH(TEXT("IconExampleEditorMode"), Icon20x20));
+		StyleSet->Set("Icon",
+			new IMAGE_BRUSH(TEXT("Icon"), Icon40x40));
+		StyleSet->Set("Icon.Small",
+			new IMAGE_BRUSH(TEXT("Icon"), Icon20x20));
 	}
 	
 	FSlateStyleRegistry::RegisterSlateStyle(*StyleSet.Get());
@@ -63,8 +63,8 @@ void FVoxelMeshEdModeRegister::RegisterEditorMode() const
 	FEditorModeID ModeID = FVoxelMeshEdMode::EditorModeID;
 	FText ModeName = FText::FromString(TEXT("VMEditorMode"));
 	FSlateIcon Icon(StyleSet->GetStyleSetName(),
-		"IconVMEdMode",
-		"IconVMEdMode.Small");  
+		"Icon",
+		"Icon.Small");  
 	
 	FEditorModeRegistry::Get().RegisterMode<FVoxelMeshEdMode>(
 		MoveTemp(ModeID),

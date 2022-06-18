@@ -1,14 +1,14 @@
 #pragma once
 
-#include "ExampleEditor/IExampleEditorModule.h"
-#include "ExampleEditor/ExampleEditorModule.h"
+#include "EditorTool/IEditorToolModule.h"
+#include "EditorTool/EditorToolModule.h"
 
 // slate module
 #include "Framework/Docking/TabManager.h"
 #include "widgets/Docking/SDockTab.h"
 
 class FExampleTabToolBase :
-public IExampleEditorModuleListener,
+public IEditorToolModuleListener,
 public TSharedFromThis<FExampleTabToolBase>
 {
 public:
@@ -20,7 +20,7 @@ public:
 		FGlobalTabmanager::Get()->RegisterNomadTabSpawner(
 			TabName,
 			FOnSpawnTab::CreateRaw(this, &FExampleTabToolBase::SpawnTab))
-			.SetGroup(FExampleEditorModule::Get().GetMenuRoot())
+			.SetGroup(FEditorToolModule::Get().GetMenuRoot())
 			.SetDisplayName(TabDisplayName)
 			.SetTooltipText(ToolTipText);
 	};

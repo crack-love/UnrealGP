@@ -1,5 +1,5 @@
 #include "MenuTool.h"
-#include "ExampleEditor/ExampleEditorModule.h"
+#include "EditorTool/EditorToolModule.h"
 
 #define LOCTEXT_NAMESPACE "MenuTool"
 
@@ -50,7 +50,7 @@ void MenuTool::OnStartupModule()
 		FCanExecuteAction());
 
 	// register to menu extension
-	FExampleEditorModule::Get().AddMenuExtension(
+	FEditorToolModule::Get().AddMenuExtension(
 		FMenuExtensionDelegate::CreateRaw(
 			this,
 			&MenuTool::MakeMenuEntry),

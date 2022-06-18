@@ -4,7 +4,7 @@
 #include "DynamicMesh/DynamicMesh3.h"
 #include "PmcSectionData.h"
 #include "VoxelData.h"
-#include "VoxelMesh.generated.h"
+#include "VoxelMeshActor.generated.h"
 
 class UProceduralMeshComponent;
 
@@ -41,12 +41,12 @@ enum class EVM_ComputeMode : uint8
 
 // 복셀 데이터 -> 다이나믹 메쉬 -> 프로세듀얼 메쉬
 UCLASS(Blueprintable)
-class VOXELMESH_API AVoxelMesh : public AVoxelData
+class VOXELMESH_API AVoxelMeshActor : public AVoxelData
 {
 	GENERATED_BODY()
 
 public:
-	AVoxelMesh(const FObjectInitializer& Init);
+	AVoxelMeshActor(const FObjectInitializer& Init);
 	
 	virtual void PostInitializeComponents() override;
 

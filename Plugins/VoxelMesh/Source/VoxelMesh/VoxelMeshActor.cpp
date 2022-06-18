@@ -1,4 +1,4 @@
-#include "VoxelMesh.h"
+#include "VoxelMeshActor.h"
 
 #include "ProceduralMeshComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -9,7 +9,7 @@
 #include "TransDm3ToPmc.h"
 #include "VoxelMeshTools.h"
 
-AVoxelMesh::AVoxelMesh(const FObjectInitializer& Init) : Super(Init)
+AVoxelMeshActor::AVoxelMeshActor(const FObjectInitializer& Init) : Super(Init)
 {
 	// actor set
 	PrimaryActorTick.bCanEverTick = true;
@@ -28,14 +28,14 @@ AVoxelMesh::AVoxelMesh(const FObjectInitializer& Init) : Super(Init)
 	bNeedUpdateMesh = true;
 }
 
-void AVoxelMesh::PostInitializeComponents()
+void AVoxelMeshActor::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 	
 	UpdateCollision();
 }
 
-void AVoxelMesh::Tick(const float DeltaSeconds)
+void AVoxelMeshActor::Tick(const float DeltaSeconds)
 {
 #if WITH_EDITOR
 	if (GetWorld() != nullptr && GetWorld()->WorldType == EWorldType::Editor)
@@ -69,7 +69,7 @@ void AVoxelMesh::Tick(const float DeltaSeconds)
 	}
 }
 
-bool AVoxelMesh::ShouldTickIfViewportsOnly() const
+bool AVoxelMeshActor::ShouldTickIfViewportsOnly() const
 {
 	// This ultimately is what controls whether or not it can even tick at all in the editor view port. 
 	//But, it is EVERY view port so it still needs to be blocked from preview windows and junk.
@@ -84,7 +84,7 @@ bool AVoxelMesh::ShouldTickIfViewportsOnly() const
 	}
 }
 
-void AVoxelMesh::OnVoxelDataModificated()
+void AVoxelMeshActor::OnVoxelDataModificated()
 {
 	UE_LOG(LogTemp, Log, TEXT("OnVoxelDataModificated"));
 	
@@ -92,29 +92,29 @@ void AVoxelMesh::OnVoxelDataModificated()
 	bNeedUpdateMesh = true;
 }
 
-void AVoxelMesh::SetCollisionMode(const EVM_CollisionOption Op)
+void AVoxelMeshActor::SetCollisionMode(const EVM_CollisionOption Op)
 {
 	CollisionOption = Op;
 	UpdateCollision();
 }
 
-void AVoxelMesh::SetNormalMode(const EVM_NormalMode Mode)
+void AVoxelMeshActor::SetNormalMode(const EVM_NormalMode Mode)
 {
 	NormalMode = Mode;
 }
 
-void AVoxelMesh::SetComputeMode(const EVM_ComputeMode Mode)
+void AVoxelMeshActor::SetComputeMode(const EVM_ComputeMode Mode)
 {
 	ComputeMode = Mode;
 }
 
-void AVoxelMesh::SetWrapMode(const bool bWrap)
+void AVoxelMeshActor::SetWrapMode(const bool bWrap)
 {
 	bWrapMesh = bWrap;
 }
 
 // query, physics, simple, async
-void AVoxelMesh::UpdateCollision() const
+void AVoxelMeshActor::UpdateCollision() const
 {		
 	ProceduralMesh->bUseComplexAsSimpleCollision =
 		EnumHasAnyFlags(CollisionOption, EVM_CollisionOption::Simple);
@@ -146,7 +146,7 @@ void AVoxelMesh::UpdateCollision() const
 	}
 }
 
-void AVoxelMesh::UpdateMesh()
+void AVoxelMeshActor::UpdateMesh()
 {	
 	UE_LOG(LogTemp, Log, TEXT("UpdateMesh"));
 	

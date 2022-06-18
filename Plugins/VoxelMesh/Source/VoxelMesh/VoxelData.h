@@ -11,6 +11,7 @@ class VOXELMESH_API AVoxelData : public AActor
 
 public:
 	AVoxelData(const FObjectInitializer& Init);
+	//AVoxelData();
 
 	void SetSize(FIntVector InSize, bool bForceAllocate = false);
 

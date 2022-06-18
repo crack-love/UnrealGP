@@ -1,12 +1,20 @@
 #include "VoxelData.h"
 
-AVoxelData::AVoxelData(const FObjectInitializer& Init) : Super(Init)
+//AVoxelData::AVoxelData(const FObjectInitializer& Init) : Super(Init)
+//{
+//	SetSize({10, 10, 10});	
+//	Gap = {10,10,10};
+//
+//	UE_LOG(LogTemp, Log, TEXT("Voxel Data Ctor Called"));
+//}
+
+AVoxelData::AVoxelData(const FObjectInitializer& Init = FObjectInitializer::Get()) : Super(Init)
 {
 	SetSize({10, 10, 10});	
 	Gap = {10,10,10};
-
+	
 	UE_LOG(LogTemp, Log, TEXT("Voxel Data Ctor Called"));
-}
+};
 
 void AVoxelData::SetSize(const FIntVector InSize, const bool bForceAllocate)
 {

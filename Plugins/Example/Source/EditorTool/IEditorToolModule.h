@@ -1,15 +1,20 @@
 #pragma once
 
-class IExampleEditorModuleListener
+#include "CoreGlobals.h"
+#include "Containers/Array.h"
+#include "Modules/ModuleInterface.h"
+#include "Templates/SharedPointer.h"
+
+class IEditorToolModuleListener
 {
 public:
-    virtual ~IExampleEditorModuleListener() = default;
+    virtual ~IEditorToolModuleListener() = default;
     
     virtual void OnStartupModule() {};
     virtual void OnShutdownModule() {};
 };
 
-class IExampleEditorModule : public IModuleInterface
+class IEditorToolModule : public IModuleInterface
 {
 public:
     virtual void StartupModule() override
@@ -17,7 +22,7 @@ public:
         if (!IsRunningCommandlet())
         {
             AddModuleListeners();
-            for (int32 i = 0; i < ModuleListeners.Num(); ++i)
+            for (int i = 0; i < ModuleListeners.Num(); ++i)
             {
                 ModuleListeners[i]->OnStartupModule();
             }
@@ -26,7 +31,7 @@ public:
 
     virtual void ShutdownModule() override
     {
-        for (int32 i = 0; i < ModuleListeners.Num(); ++i)
+        for (int i = 0; i < ModuleListeners.Num(); ++i)
         {
             ModuleListeners[i]->OnShutdownModule();
         }
@@ -35,5 +40,5 @@ public:
     virtual void AddModuleListeners() {};
 
 protected:
-    TArray<TSharedRef<IExampleEditorModuleListener>> ModuleListeners;
+    TArray<TSharedRef<IEditorToolModuleListener>> ModuleListeners;
 };
